@@ -33,7 +33,7 @@ export function Header() {
       }
     };
     const onResize = () => {
-      if (window.matchMedia("(min-width: 64rem)").matches) setOpen(false);
+      if (window.matchMedia("(min-width: 80rem)").matches) setOpen(false);
     };
     document.addEventListener("keydown", onKey);
     window.addEventListener("resize", onResize);
@@ -58,7 +58,7 @@ export function Header() {
           <Logo />
         </Link>
 
-        <nav aria-label="Main" className="hidden lg:block">
+        <nav aria-label="Main" className="hidden xl:block">
           <ul className="flex items-center gap-1 xl:gap-2">
             {nav.map((item) => {
               const active = isActive(pathname, item.href);
@@ -67,7 +67,7 @@ export function Header() {
                   <Link
                     href={item.href}
                     aria-current={active ? "page" : undefined}
-                    className={`relative rounded-md px-3 py-2 text-[0.95rem] font-semibold transition-colors hover:text-orange-ink ${
+                    className={`relative whitespace-nowrap rounded-md px-3 py-2 text-[0.95rem] font-semibold transition-colors hover:text-orange-ink ${
                       active
                         ? "text-navy-800 after:absolute after:inset-x-3 after:-bottom-0.5 after:h-0.5 after:rounded-full after:bg-brand-orange"
                         : "text-navy-800/80"
@@ -90,7 +90,7 @@ export function Header() {
           <button
             ref={toggleRef}
             type="button"
-            className="inline-flex h-11 w-11 items-center justify-center rounded-lg text-navy-800 hover:bg-navy-50 lg:hidden"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-lg text-navy-800 hover:bg-navy-50 xl:hidden"
             aria-expanded={open}
             aria-controls="mobile-menu"
             onClick={() => {
@@ -107,7 +107,7 @@ export function Header() {
       {open && (
         <div
           id="mobile-menu"
-          className="fixed inset-x-0 bottom-0 top-[4.75rem] overflow-y-auto border-t border-navy-100 bg-white lg:hidden"
+          className="fixed inset-x-0 bottom-0 top-[4.75rem] overflow-y-auto border-t border-navy-100 bg-white lg:top-[5.25rem] xl:hidden"
         >
           <nav aria-label="Mobile" className="container-page py-4">
             <ul className="divide-y divide-navy-100">

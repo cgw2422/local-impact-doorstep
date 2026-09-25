@@ -84,7 +84,6 @@ src/
     sections/          Hero, FeatureStrip, Industries, ProcessSteps, PricingCards,
                        CompletionReport, Faq, CtaBanner, PageHero, DoorHanger, LegalPage
     forms/QuoteForm.tsx
-    illustrations/     Hero scene (SVG)
   lib/                 site config, pricing, industries, FAQs, examples, quote schema, delivery
 tests/                 node:test unit tests
 ```
@@ -93,8 +92,7 @@ Content lives in `src/lib/*.ts`: edit prices in `pricing.ts`, industries in `ind
 
 ## Assets you may want to replace
 
-- **Hero visual:** an SVG illustration (`src/components/illustrations/HeroScene.tsx`). To use a real photo of your team hanging a door hanger, add it to `public/images/` and pass it to the hero in `src/app/page.tsx`:
-  `<HomeHero photo={{ src: "/images/hero.jpg", alt: "…" }} />` (about 1200×1120, optimized automatically).
+- **Hero photo:** `public/images/hero-door-hanger.webp`, shown full-bleed behind the headline with a navy overlay (`src/components/sections/HomeHero.tsx`). Replace the file with another photo, ideally about 1670×940 or larger, with the subject on the right third so it clears the text. It is optimized and served in modern formats automatically.
 - **Logo:** recreated in SVG (`src/components/brand/Logo.tsx`, `src/app/icon.svg`). Swap in the final vector files from your designer if they differ.
 - **Sample campaigns:** mock designs with fictional businesses and `555` numbers. Replace with real, permission-cleared client work when available and remove the "sample" labels.
 - **Completion report mock:** illustrative. Update if your real report format differs.
